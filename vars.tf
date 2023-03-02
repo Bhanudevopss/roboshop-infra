@@ -27,22 +27,27 @@ variable "instances" {
     mysql = {
       name = "mysql"
       type = "t3.micro"
+      password = "roboshop123"
     }
     shipping = {
       name = "shipping"
       type = "t3.micro"
+      password = "roboshop123"
     }
     rabbit-mq = {
       name = "rabbit-mq"
       type = "t3.micro"
+      password = "roboshop123"
     }
     payment = {
       name = "payment"
       type = "t3.micro"
+      password = "roboshop123"
     }
     dispatch = {
       name = "dispatch"
       type = "t3.micro"
+      password = "roboshop123"
     }
   }
 }
