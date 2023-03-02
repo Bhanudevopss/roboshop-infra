@@ -6,17 +6,19 @@ data "aws_ami" "ami" {
 
 
 resource "aws_instance" "ec2" {
-  ami = "ami-0a017d8ceb274537d"
-  instance_type = var.instance_type
+  ami                    = "ami-0a017d8ceb274537d"
+  instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.sg.id]
-  tags = {
+  tags                   = {
     Name = var.component
   }
+}
 
+resource "null_resource" "provisioner" {
   provisioner "remote-exec" {
 
     connection {
-      host = self.public_ip
+      host = aws_instance.ec2.public_ip
       user = "root"
       password = "DevOps321"
     }
