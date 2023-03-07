@@ -19,7 +19,7 @@ parameters = [
   { name = "dev.cart.redis_host", value = "redis-dev.devopswithbhanu.online", type = "String" },
   { name = "dev.cart.catalogue_host", value = "catalogue-dev.devopswithbhanu.online", type = "String" },
   { name = "dev.cart.catalogue_port", value = "8080", type = "String" },
-  { name = "dev.dispatch.amqp_host", value = "rabbitmq-dev.devopswithbhanu.online", type = "String" },
+  { name = "dev.dispatch.amqp_host", value = "rabbitmq-dev.devopswithbhanu.online", type = "String" }
 ]
 
 ### THIS IS NOT GOING TO BE THE PRACTICE IN COMPANIES, WE SHOULD NOT KEEP PASSWORDS IN GIT REPOS
