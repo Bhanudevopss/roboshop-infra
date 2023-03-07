@@ -22,7 +22,7 @@ parameters = [
   { name = "dev.dispatch.amqp_host", value = "rabbitmq-dev.devopswithbhanu.online", type = "String" }
 ]
 
-### THIS IS NOT GOING TO BE THE PRACTICE IN COMPANIES, WE SHOULD NOT KEEP PASSWORDS IN GIT REPOS
+
 secrets = [
   { name = "dev.mysql.password", value = "RoboShop@1", type = "SecureString" },
   { name = "dev.payment.amqp_user", value = "roboshop", type = "SecureString" },
