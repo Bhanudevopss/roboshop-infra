@@ -87,6 +87,6 @@ elasticache = {
 
 rabbitmq = {
   main = {
-    instance = "t3.micro"
+    instance_type = "t3.micro"
   }
 }
