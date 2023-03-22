@@ -6,5 +6,5 @@ variable "default_route_table" {}
 variable "docdb" {}
 variable "rds" {}
 variable "elasticache" {}
-
+variable "rabbitmq" {}
 

@@ -85,3 +85,8 @@ elasticache = {
   }
 }
 
+rabbitmq = {
+  main = {
+    instance = "t3.micro"
+  }
+}
