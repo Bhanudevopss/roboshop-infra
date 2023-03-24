@@ -105,7 +105,13 @@ alb = {
     name = "private"
     internal = true
     load_balancer_type = "application"
+  }
+}
 
+apps = {
+  catalogue = {
+    component = "catalogue"
+    instance_type = "t3.nano"
   }
 }
 
