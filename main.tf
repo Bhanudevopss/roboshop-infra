@@ -103,4 +103,3 @@ module "app" {
 output "vpc" {
   value = module.vpc
 }
-

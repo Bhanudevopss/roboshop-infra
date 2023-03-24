@@ -13,3 +13,4 @@ locals {
   web_subnet_ids = tolist([module.vpc["main"].private_subnets["web-az1"].id, module.vpc["main"].private_subnets["web-az2"].id])
 }
 
+
