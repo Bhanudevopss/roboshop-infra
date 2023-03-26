@@ -94,7 +94,7 @@ module "app" {
 
   vpc_id = module.vpc["main"].vpc_id
 
-  for_each          = var.apps
+  for_each          = var.app
   component         = each.value["component"]
   instance_type     = each.value["instance_type"]
   desired_capacity  = each.value["desired_capacity"]
