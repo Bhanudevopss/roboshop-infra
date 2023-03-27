@@ -14,3 +14,4 @@ resource "aws_ssm_parameter" "secret" {
 
 variable "parameters" {}
 variable "secrets" {}
+
