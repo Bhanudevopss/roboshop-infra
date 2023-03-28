@@ -64,7 +64,7 @@ docdb = {
     skip_final_snapshot     = true
     no_of_instances = 1
     instance_class = "db.t3.medium"
-    allow_subnets           = "app"
+    allow_subnets = "app"
   }
 }
 
@@ -76,6 +76,7 @@ rds = {
     preferred_backup_window = "07:00-09:00"
     no_of_instances = 1
     instance_class = "db.t3.small"
+    allow_subnets           = "app"
   }
 }
 
@@ -85,12 +86,14 @@ elasticache = {
     engine_version = "6.x"
     num_cache_nodes = 1
     node_type = "cache.t3.micro"
+    allow_subnets = "app"
   }
 }
 
 rabbitmq = {
   main = {
     instance_type = "t3.micro"
+    allow_subnets = "app"
   }
 }
 
