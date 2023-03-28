@@ -32,43 +32,53 @@ module "docdb" {
 
 module "rds" {
   source = "git::https://github.com/Bhanudevopss/tf-module-rds.git"
-  env = var.env
-  tags = var.tags
+  env    = var.env
+  tags   = var.tags
 
   subnet_ids = local.db_subnet_ids
+  vpc_id     = module.vpc["main"].vpc_id
 
-  for_each = var.rds
-  engine = each.value["engine"]
-  engine_version = each.value["engine_version"]
+  for_each                = var.rds
+  engine                  = each.value["engine"]
   backup_retention_period = each.value["backup_retention_period"]
   preferred_backup_window = each.value["preferred_backup_window"]
-  no_of_instances = each.value["no_of_instances"]
-  instance_class = each.value["instance_class"]
+  engine_version          = each.value["engine_version"]
+  instance_class          = each.value["instance_class"]
+  no_of_instances         = each.value["no_of_instances"]
+  allow_subnets           = lookup(local.subnet_cidr, each.value["allow_subnets"], null)
 }
 
 module "elasticache" {
   source = "git::https://github.com/Bhanudevopss/tf-module-elasticache.git"
-  env = var.env
-  tags = var.tags
+  env    = var.env
+  tags   = var.tags
 
   subnet_ids = local.db_subnet_ids
+  vpc_id     = module.vpc["main"].vpc_id
 
-  for_each = var.elasticache
-  engine = each.value["engine"]
-  engine_version = each.value["engine_version"]
-  node_type = each.value["node_type"]
+  for_each        = var.elasticache
+  engine          = each.value["engine"]
+  engine_version  = each.value["engine_version"]
   num_cache_nodes = each.value["num_cache_nodes"]
+  node_type       = each.value["node_type"]
+  allow_subnets   = lookup(local.subnet_cidr, each.value["allow_subnets"], null)
+
 }
 
 module "rabbitmq" {
   source = "git::https://github.com/Bhanudevopss/tf-module-rabbitmq.git"
-  env = var.env
-  tags = var.tags
+  env          = var.env
+  tags         = var.tags
+  bastion_cidr = var.bastion_cidr
+  dns_domain   = var.dns_domain
 
   subnet_ids = local.db_subnet_ids
+  vpc_id     = module.vpc["main"].vpc_id
 
-  for_each = var.rabbitmq
+  for_each      = var.rabbitmq
   instance_type = each.value["instance_type"]
+  allow_subnets = lookup(local.subnet_cidr, each.value["allow_subnets"], null)
+
 }
 
 module "alb" {
@@ -88,6 +98,9 @@ module "alb" {
 }
 
 module "app" {
+
+  depends_on = [module.docdb, module.rds, module.elasticache, module.alb, module.rabbitmq]
+
   source       = "git::https://github.com/raghudevopsb71/tf-module-app.git"
   env          = var.env
   tags         = var.tags

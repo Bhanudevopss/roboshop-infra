@@ -10,15 +10,15 @@ parameters = [
   { name = "dev.shipping.cart_endpoint", value = "cart-dev.devopswithbhanu.online:8080", type = "String" },
   { name = "dev.shipping.db_host", value = "mysql-dev.devopswithbhanu.online", type = "String" },
   { name = "dev.payment.cart_host", value = "cart-dev.devopswithbhanu.online", type = "String" },
-  { name = "dev.payment.cart_port", value = "8080", type = "String" },
+  { name = "dev.payment.cart_port", value = "80", type = "String" },
   { name = "dev.payment.user_host", value = "user-dev.devopswithbhanu.online", type = "String" },
-  { name = "dev.payment.user_port", value = "8080", type = "String" },
+  { name = "dev.payment.user_port", value = "80", type = "String" },
   { name = "dev.payment.amqp_host", value = "rabbitmq-dev.devopswithbhanu.online", type = "String" },
   { name = "dev.catalogue.mongo", value = "true", type = "String" },
   { name = "dev.catalogue.mongo_url", value = "mongodb://mongodb-dev.devopswithbhanu.online:27017/users", type = "String" },
   { name = "dev.cart.redis_host", value = "redis-dev.devopswithbhanu.online", type = "String" },
   { name = "dev.cart.catalogue_host", value = "catalogue-dev.devopswithbhanu.online", type = "String" },
-  { name = "dev.cart.catalogue_port", value = "8080", type = "String" },
+  { name = "dev.cart.catalogue_port", value = "80", type = "String" },
   { name = "dev.dispatch.amqp_host", value = "rabbitmq-dev.devopswithbhanu.online", type = "String" }
 ]
 
