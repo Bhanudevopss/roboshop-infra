@@ -141,7 +141,7 @@ resource "aws_spot_instance_request" "load-runner" {
   ami                    = data.aws_ami.ami.id
   instance_type          = "t3.medium"
   wait_for_fulfillment   = true
-  vpc_security_group_ids = ["sg-0fc69f59ac03ac238"]
+  vpc_security_group_ids = module.vpc["main"].vpc_id
 
   tags = merge(
     var.tags,
