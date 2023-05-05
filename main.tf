@@ -81,7 +81,7 @@ module "rabbitmq" {
   allow_subnets = lookup(local.subnet_cidr, each.value["allow_subnets"], null)
 
 }
-/*
+
 module "alb" {
   source = "git::https://github.com/Bhanudevopss/tf-module-alb.git"
   env    = var.env
@@ -130,7 +130,7 @@ output "alb" {
   value = module.elasticache
 }
 
-*/
+
 
 ## Load Runner
 resource "aws_spot_instance_request" "load-runner" {
