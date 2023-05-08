@@ -77,7 +77,7 @@ rds = {
     preferred_backup_window = "07:00-09:00"
     no_of_instances = 1
     instance_class = "db.t3.small"
-    allow_subnets           = "app"
+    allow_subnets  = "app"
   }
 }
 
@@ -120,7 +120,7 @@ alb = {
 app = {
   catalogue = {
     component = "catalogue"
-    instance_type = "t3.micro"
+    instance_type = "t3.small"
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
@@ -133,7 +133,7 @@ app = {
   }
   cart = {
     component = "cart"
-    instance_type = "t3.micro"
+    instance_type = "t3.small"
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
@@ -146,7 +146,7 @@ app = {
   }
   user = {
     component = "user"
-    instance_type = "t3.micro"
+    instance_type = "t3.small"
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
@@ -185,7 +185,7 @@ app = {
   }
   dispatch = {
     component = "dispatch"
-    instance_type = "t3.micro"
+    instance_type = "t3.small"
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
